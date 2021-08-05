@@ -14,6 +14,23 @@ python3 main.py
 ```
 In your command line
 
+## Config help
+```
+client_id - YOUR_ID
+state - YOUR_STATE
+large_image - YOUR_LARGE_IMAGE_ID
+small_image - YOUR_SMALL_IMAGE_ID
+large_text - YOUR_LARGE_IMAGE_TEXT
+small_text - YOUR_SMALL_IMAGE_TEXT
+buttons - TRUE/FALSE
+buttonnum - 1/2 (Only 2 buttons can be added)
+button1_text - BUTTON_1_TEXT
+button1_url - BUTTON_1_URL
+button2_text - BUTTON_2_TEXT
+button2_url - BUTTON_2_URL
+os - TRUE/FALSE (Will be shared in 'state', example, if 'state' is "hi" and 'os' is enabled it will show us as: "OS: [YOUR_OS] | hi")
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
