@@ -9,6 +9,7 @@ def no_button(client_id, state, large_image, small_image, large_text, small_text
     RPC.connect()  # Start the handshake loop
     while True:
         cpu_per = round(psutil.cpu_percent(), 1)  # Get CPU Usage
+        mem = psutil.virtual_memory()
         mem_per = round(psutil.virtual_memory().percent, 1)
         if os == 1:
             os_details = f"{platform.system()} {platform.release()}"
@@ -35,6 +36,7 @@ def one_button(client_id, state, large_image, small_image, large_text, small_tex
     RPC.connect()  # Start the handshake loop
     while True:
         cpu_per = round(psutil.cpu_percent(), 1)  # Get CPU Usage
+        mem = psutil.virtual_memory()
         mem_per = round(psutil.virtual_memory().percent, 1)
         if os == 1:
             os_details = f"{platform.system()} {platform.release()}"
@@ -62,6 +64,7 @@ def two_button(client_id, state, large_image, small_image, large_text, small_tex
     RPC.connect()  # Start the handshake loop
     while True:
         cpu_per = round(psutil.cpu_percent(), 1)  # Get CPU Usage
+        mem = psutil.virtual_memory()
         mem_per = round(psutil.virtual_memory().percent, 1)
         if os == 1:
             os_details = f"{platform.system()} {platform.release()}"
