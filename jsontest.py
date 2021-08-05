@@ -13,6 +13,14 @@ def importconfig():
     small_image = data["small_image"]
     large_text = data["large_text"]
     small_text = data["small_text"]
+    os = data["os"].upper()
+    if os == "TRUE":
+        os = 1
+    elif os == "FALSE":
+        os = 0
+    else:
+        print("'os' needs to be TRUE of FALSE")
+        exit()
     buttons = data["buttons"].upper()
     if buttons == "TRUE":
         try:
@@ -25,13 +33,13 @@ def importconfig():
                 button1_url = data["button1_url"]
                 button2_text = 0
                 button2_url = 0
-                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url
+                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
             elif buttonnum == 2:
                 button1_text = data["button1_text"]
                 button1_url = data["button1_url"]
                 button2_text = data["button2_text"]
                 button2_url = data["button2_url"]
-                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url
+                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
         except ValueError:
             print("Please enter a number in 'buttonnum'!")
             exit()
@@ -40,11 +48,11 @@ def importconfig():
         button1_url = 0
         button2_text = 0
         button2_url = 0
-        return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url
+        return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
     elif buttons != "TRUE" or buttons != "FALSE":
         print("'buttons' needs to be TRUE or FALSE")
         exit()
 
 
-client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url = importconfig()
-print(f"Client ID: {client_id} | State: {state} | Large image ID: {large_image} | Small image ID: {small_image} | Large image text: {large_text} | Small image text: {small_text} | Button 1 text: {button1_text} | Button 1 URL: {button1_url} | Button 2 text: {button2_text} | Button 2 URL: {button2_url} || This is for testing purposes")
+client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os = importconfig()
+print(f"Client ID: {client_id} | State: {state} | Large image ID: {large_image} | Small image ID: {small_image} | Large image text: {large_text} | Small image text: {small_text} | Button 1 text: {button1_text} | Button 1 URL: {button1_url} | Button 2 text: {button2_text} | Button 2 URL: {button2_url} | OS: {os} || This is for testing purposes")
