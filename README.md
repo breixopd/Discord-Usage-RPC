@@ -29,6 +29,7 @@ button1_url - BUTTON_1_URL
 button2_text - BUTTON_2_TEXT
 button2_url - BUTTON_2_URL
 os - TRUE/FALSE (Will be shared in 'state', example, if 'state' is "hi" and 'os' is enabled it will show us as: "OS: [YOUR_OS] | hi")
+startup - TRUE/FALSE (Enables delay of 30s for startup)
 ```
 
 ## Contributing
