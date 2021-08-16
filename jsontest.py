@@ -25,6 +25,14 @@ def importconfig():
     small_text = data["small_text"]
     if small_text == "" or small_text == "YOUR_SMALL_IMAGE_TEXT":
         small_text = "By b2splashyy"
+    startup = data["startup"].upper()
+    if startup == "TRUE":
+        startup = 1
+    elif startup == "FALSE":
+        startup = 0
+    else:
+        print("'startup' needs to be TRUE of FALSE")
+        exit()
     os = data["os"].upper()
     if os == "TRUE":
         os = 1
@@ -51,7 +59,7 @@ def importconfig():
                     exit()
                 button2_text = 0
                 button2_url = 0
-                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
+                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os, startup
             elif buttonnum == 2:
                 button1_text = data["button1_text"]
                 if button1_text == "" or button1_text == "BUTTON_1_TEXT":
@@ -69,7 +77,7 @@ def importconfig():
                 if button2_url == "" or button2_url == "BUTTON_2_URL":
                     print("Enter something for 'button2_url'!")
                     exit()
-                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
+                return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os, startup
         except ValueError:
             print("Please enter a number in 'buttonnum'!")
             exit()
@@ -78,11 +86,11 @@ def importconfig():
         button1_url = 0
         button2_text = 0
         button2_url = 0
-        return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os
+        return client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os, startup
     elif buttons != "TRUE" or buttons != "FALSE":
         print("'buttons' needs to be TRUE or FALSE")
         exit()
 
 
-client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os = importconfig()
-print(f"Client ID: {client_id} | State: {state} | Large image ID: {large_image} | Small image ID: {small_image} | Large image text: {large_text} | Small image text: {small_text} | Button 1 text: {button1_text} | Button 1 URL: {button1_url} | Button 2 text: {button2_text} | Button 2 URL: {button2_url} | OS: {os} || This is for testing purposes")
+client_id, state, large_image, small_image, large_text, small_text, button1_text, button1_url, button2_text, button2_url, os, startup = importconfig()
+print(f"Client ID: {client_id} | State: {state} | Large image ID: {large_image} | Small image ID: {small_image} | Large image text: {large_text} | Small image text: {small_text} | Button 1 text: {button1_text} | Button 1 URL: {button1_url} | Button 2 text: {button2_text} | Button 2 URL: {button2_url} | OS: {os} | Startup: {startup} || This is for testing purposes")

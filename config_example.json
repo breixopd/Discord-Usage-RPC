@@ -11,5 +11,6 @@
 	"button1_url": "BUTTON_1_URL",
 	"button2_text": "BUTTON_2_TEXT",
 	"button2_url": "BUTTON_2_URL",
-	"os": "TRUE/FALSE"
+	"os": "TRUE/FALSE",
+	"startup": "TRUE/FALSE"
 }
